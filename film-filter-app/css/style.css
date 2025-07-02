@@ -1,0 +1,326 @@
+:root {
+  --primary-color: #333;
+  --accent-color: #4caf50;
+  --accent-hover: #45a049;
+  --background-color: #f0f0f0;
+  --card-background: white;
+  --text-color: #333;
+  --sidebar-bg: #222;
+  --sidebar-text: white;
+  --seen-color: #e6f7e6;
+  --seen-text: #2e7d32;
+  --remove-bg: #ffebee;
+  --remove-color: #c62828;
+  --shadow-light: 0 3px 10px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.15);
+  --transition-speed: 0.3s;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  transition: background-color var(--transition-speed);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  width: 12%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: all var(--transition-speed);
+}
+
+.sidebar button {
+  background-color: var(--card-background);
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #444;
+  color: white;
+}
+
+#genreMenu {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+#genreMenu li {
+  margin-bottom: 8px;
+}
+
+#genreMenu a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed);
+}
+
+#genreMenu a:hover {
+  background-color: #444;
+}
+
+/* Main content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Add movie form */
+#addFilmForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  background-color: var(--card-background);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+#addFilmForm:focus-within {
+  box-shadow: var(--shadow-medium);
+}
+
+#addFilmForm input,
+#addFilmForm select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  flex-grow: 1;
+}
+
+#addFilmForm button {
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#addFilmForm button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Movie list */
+#filmList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.movie-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: var(--text-color);
+}
+
+.movie-card.seen h3 {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.movie-card button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+/* Movie image */
+.img-card {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform var(--transition-speed);
+}
+
+.movie-card.seen .img-card {
+  filter: grayscale(0.3);
+}
+
+.movie-card:hover .img-card {
+  transform: scale(1.03);
+}
+
+/* Button states */
+.btn-visto {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn-visto.seen {
+  background-color: var(--seen-color);
+  color: var(--seen-text);
+}
+
+.btn-visto:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-remove {
+  background-color: var(--remove-bg);
+  color: var(--remove-color);
+}
+
+.btn-remove:hover {
+  background-color: #ffcdd2;
+}
+
+/* Sorting buttons */
+.sort-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.sort-options button {
+  flex: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.movie-card.removing {
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  #filmList {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 30%;
+  }
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+    max-height: 300px;
+  }
+  #addFilmForm {
+    flex-direction: column;
+  }
+  .sort-options {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 40%;
+  }
+  #filmList {
+    grid-template-columns: 1fr;
+  }
+  .movie-card {
+    max-width: 100%;
+  }
+}

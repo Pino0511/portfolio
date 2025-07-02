@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Film Filter App</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/main.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <img src="logo.png" alt="Logo" class="logo" />
+        </nav>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <input type="text" id="searchInput"
+                    placeholder="Search movies..." />
+                <ul id="genreMenu">
+                    <li><a href="index.html?categoria=comedy">Comedy</a></li>
+                    <li><a href="index.html?categoria=drama">Drama</a></li>
+                    <li><a href="index.html?categoria=horror">Horror</a></li>
+                    <li><a href="index.html?categoria=classic">Classic</a></li>
+                    <li><a href="index.html?categoria=animation">Animation</a></li>
+                    <li><a href="index.html?categoria=mystery">Mystery</a></li>
+                </ul>
+                <select id="filterStatus">
+                    <option value="all">All</option>
+                    <option value="seen">Seen</option>
+                    <option value="unseen">Unseen</option>
+                </select>
+                <button id="sortAscBtn">Sort A-Z</button>
+                <button id="sortDescBtn">Sort Z-A</button>
+            </aside>
+
+            <main class="content">
+                <form id="addFilmForm">
+                    <input type="text" id="filmTitle" placeholder="Movie title"
+                        required />
+                    <input type="text" id="filmImage" placeholder="Image URL" />
+                    <button type="submit">Add Movie</button>
+                </form>
+                <ul id="filmList"></ul>
+            </main>
+        </div>
+    </body>
+</html>
