@@ -154,7 +154,7 @@ Continuously expanding my knowledge through online courses, technical documentat
 I'm always open to discussing new projects, opportunities, or collaborations!
 
 📧 **Email:** [jacoporusso2811@gmail.com](mailto:jacoporusso2811@gmail.com)  
-🔗 **LinkedIn:** [linkedin.com/in/jacopo-russo](httpswww.linkedin.com/in/jacopo-russo-381530350/)  
+🔗 **LinkedIn:** [linkedin.com/in/jacopo-russo](https://www.linkedin.com/in/jacopo-russo-381530350/)  
 💻 **GitHub:** [github.com/Pino0511](https://github.com/Pino0511)
 
 ---
