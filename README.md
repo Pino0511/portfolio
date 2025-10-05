@@ -11,6 +11,7 @@ I specialize in building dynamic web applications with a strong focus on user ex
 ## 💼 Featured Projects
 
 ### 🎬 [Film Filter App](./film-filter/)
+
 An interactive web application that fetches movies from a public API with advanced filtering capabilities.
 
 **Key Features:**
@@ -25,6 +26,7 @@ An interactive web application that fetches movies from a public API with advanc
 ---
 
 ### 🌦️ [Weather Dashboard](./weather-app/)
+
 A comprehensive weather application providing real-time meteorological data powered by Open-Meteo API.
 
 **Key Features:**
@@ -39,6 +41,7 @@ A comprehensive weather application providing real-time meteorological data powe
 ---
 
 ### 🛍️ [E-commerce Showcase](./ecommerce/)
+
 A modern, fully responsive e-commerce storefront with product catalog and shopping cart functionality.
 
 **Key Features:**
@@ -55,17 +58,21 @@ A modern, fully responsive e-commerce storefront with product catalog and shoppi
 ## 🛠️ Technical Skills
 
 ### Frontend Development
-- **Languages:** HTML5, CSS3, JavaScript (ES6+)
-- **Responsive Design:** Mobile-first approach, CSS Grid, Flexbox
-- **APIs:** REST API integration, Fetch API, Asynchronous programming
+
+• Languages: HTML5, CSS3, JavaScript (ES6+)
+• Frameworks: React
+• Responsive Design: Mobile-first approach, CSS Grid, Flexbox
+• APIs: REST API integration, Fetch API, Asynchronous programming
 
 ### Backend & Data Analysis
-- **Python:** Data processing, web scraping, automation
-- **Natural Language Processing:** NLTK, text analysis, sentiment analysis
-- **Containerization:** Docker for development and deployment
-- **Version Control:** Git, GitHub
+
+• Python: Data processing, web scraping, automation
+• Natural Language Processing: NLTK, text analysis, sentiment analysis
+• Containerization: Docker for development and deployment
+• Version Control: Git, GitHub
 
 ### Core Competencies
+
 - Clean, maintainable, and well-documented code
 - DOM manipulation and event-driven programming
 - Responsive web design principles
@@ -77,11 +84,11 @@ A modern, fully responsive e-commerce storefront with product catalog and shoppi
 
 ## 🎓 Education
 
-**ITS Diploma** - Digital Technologies  
-*Currently enrolled*
+**ITS Diploma** - Digital Technologies
+  *Currently enrolled*
 
-**Computer Science Diploma**  
-*Completed*
+**Computer Science Diploma**
+  *Completed*
 
 Continuously expanding my knowledge through online courses, technical documentation, and hands-on projects.
 
@@ -94,7 +101,7 @@ Continuously expanding my knowledge through online courses, technical documentat
 - Strong foundation in both frontend and backend technologies
 
 **Future Goals:**
-- Expand expertise in modern JavaScript frameworks (React, Vue.js)
+- Master advanced React patterns and explore Vue.js framework
 - Deepen backend development skills with Node.js and databases
 - Contribute to open-source projects
 - Launch freelance services on Fiverr and Upwork
