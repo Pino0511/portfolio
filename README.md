@@ -57,38 +57,78 @@ A modern, fully responsive e-commerce storefront with product catalog and shoppi
 
 ## 🛠️ Technical Skills
 
-### Frontend Development
-
-• Languages: HTML5, CSS3, JavaScript (ES6+)
-• Frameworks: React
-• Responsive Design: Mobile-first approach, CSS Grid, Flexbox
-• APIs: REST API integration, Fetch API, Asynchronous programming
-
-### Backend & Data Analysis
-
-• Python: Data processing, web scraping, automation
-• Natural Language Processing: NLTK, text analysis, sentiment analysis
-• Containerization: Docker for development and deployment
-• Version Control: Git, GitHub
-
-### Core Competencies
-
-- Clean, maintainable, and well-documented code
+### 💻 Frontend Development
+- HTML5, CSS3, JavaScript (ES6+)
+- Responsive Web Design & Mobile-First approach
+- CSS Grid & Flexbox
+- User Experience (UX) & User Interface (UI) Design
 - DOM manipulation and event-driven programming
-- Responsive web design principles
 - RESTful API integration and data handling
-- Problem-solving and debugging
-- Project organization and best practices
+
+### ⚙️ Backend & Server-Side Development
+- **Java** (Standard Edition & Enterprise Edition)
+- **C#** (Base & Advanced)
+- **Python** (scripting & data analysis)
+- Microservices Architectures (Java)
+- Web server configuration
+- Docker & containerization
+
+### 🗄️ Database & Data Management
+- Relational Databases & SQL
+- NoSQL Databases
+- Big Data & Cloud Computing
+- Data modeling and optimization
+
+### 🔒 Cybersecurity & Quality Assurance
+- Cybersecurity fundamentals
+- IT Security best practices
+- Test Automation (JUnit, Build & Automation)
+- Quality Assurance methodologies
+- Code testing and debugging
+
+### 🌐 Networking & Infrastructure
+- Network communication protocols
+- Web server configuration
+- IT infrastructure basics
+- System security implementation
+
+### 📐 Software Engineering & Methodologies
+- Software Analysis & Design (UML)
+- Project Management methodologies
+- Agile development practices
+- Version control (Git/GitHub)
+- Clean code principles and best practices
+
+---
+
+## 🎯 Additional Competencies
+
+### 🧠 Core Technical Skills
+- **Natural Language Processing** (NLTK, text analysis)
+- **Mathematical Logic** for algorithm design
+- **Technical English** for documentation and communication
+- Problem-solving and analytical thinking
+
+### 📚 Legal & Professional Knowledge
+- IT Law fundamentals
+- Data protection and privacy regulations
+- Software licensing and intellectual property
+
+### 🤝 Soft Skills
+- Project organization and time management
+- Technical documentation writing
+- Team collaboration and communication
+- Continuous learning and adaptation to new technologies
 
 ---
 
 ## 🎓 Education
 
-**ITS Diploma** - Digital Technologies
-  *Currently enrolled*
+**ITS Diploma** - Digital Technologies  
+*Currently enrolled*
 
-**Computer Science Diploma**
-  *Completed*
+**Technical High School Diploma in Computer Science**  
+*Completed*
 
 Continuously expanding my knowledge through online courses, technical documentation, and hands-on projects.
 
@@ -101,7 +141,7 @@ Continuously expanding my knowledge through online courses, technical documentat
 - Strong foundation in both frontend and backend technologies
 
 **Future Goals:**
-- Master advanced React patterns and explore Vue.js framework
+- Master advanced React patterns 
 - Deepen backend development skills with Node.js and databases
 - Contribute to open-source projects
 - Launch freelance services on Fiverr and Upwork
@@ -113,16 +153,9 @@ Continuously expanding my knowledge through online courses, technical documentat
 
 I'm always open to discussing new projects, opportunities, or collaborations!
 
-📧 **Email:** [jacopo.nicolorusso@gmail.com](mailto:jacopo.nicolorusso@gmail.com)  
-🔗 **LinkedIn:** [linkedin.com/in/jacopo-russo](https://www.linkedin.com/in/tuo-profilo)  
-💼 **Fiverr:** [Coming Soon](https://www.fiverr.com/tuo-username)  
+📧 **Email:** [jacoporusso2811@gmail.com](mailto:jacoporusso2811@gmail.com)  
+🔗 **LinkedIn:** [linkedin.com/in/jacopo-russo](httpswww.linkedin.com/in/jacopo-russo-381530350/)  
 💻 **GitHub:** [github.com/Pino0511](https://github.com/Pino0511)
-
----
-
-## 📊 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Pino0511&show_icons=true&theme=radical)
 
 ---
 
