@@ -1,168 +1,96 @@
-# 👨‍💻 Jacopo Russo - Web Developer Portfolio
+# 👨‍💻 Jacopo Russo – Web Developer Portfolio
 
-Welcome to my portfolio! I'm a passionate Italian web developer with a diploma in Computer Science, currently pursuing an ITS degree in Digital Technologies.
+Welcome to my personal portfolio! I am Jacopo Russo, an Italian web and mobile developer with a Computer Science diploma and currently studying Digital Technologies at ITS. I am passionate about building innovative digital solutions and continuously improving my technical and analytical skills.
+
+---
 
 ## 🚀 About Me
 
-I specialize in building dynamic web applications with a strong focus on user experience and clean code. My expertise spans from frontend development to backend systems and data analysis, with a continuous drive to learn and implement cutting-edge technologies.
+I create dynamic web and mobile applications with a strong focus on clean code, user experience, and modern software practices. My expertise spans from frontend design and development to backend architecture and data analysis. I thrive on learning new technologies and tackling challenging projects.
 
 ---
 
 ## 💼 Featured Projects
 
-### 🎬 [Film Filter App](./film-filter/)
+### 🕹️ Pokedex Mobile App
+A Pokédex-inspired cross-platform mobile app built with React Native, designed to display and search Pokémon data retrieved from public APIs.
 
-An interactive web application that fetches movies from a public API with advanced filtering capabilities.
+**Key Features:**
+- Full Pokémon catalog with real-time API fetching
+- Interactive search and advanced filtering
+- Modern, responsive mobile UI for both iOS and Android
+
+**Tech Stack:** React Native, JavaScript (ES6+), Public APIs
+
+[📂 Source Code](./pokedex/)
+
+---
+
+### 🎬 Film Filter App
+An interactive web app for browsing and filtering movies using a public film API.
 
 **Key Features:**
 - Real-time filtering by genre, release year, and language
 - Responsive design optimized for all devices
-- Asynchronous data fetching with error handling
+- Asynchronous data fetching with robust error handling
 
-**Tech Stack:** HTML5, CSS3, JavaScript (ES6+), Fetch API, REST APIs
+**Tech Stack:** HTML5, CSS3, JavaScript (ES6+), Fetch API
 
-[🔗 Live Demo](#) | [📂 Source Code](./film-filter/)
-
----
-
-### 🌦️ [Weather Dashboard](./weather-app/)
-
-A comprehensive weather application providing real-time meteorological data powered by Open-Meteo API.
-
-**Key Features:**
-- Current weather conditions and 7-day forecasts
-- Geolocation support for automatic location detection
-- Clean, intuitive UI with weather icons
-
-**Tech Stack:** HTML5, JavaScript, REST API, Geolocation API
-
-[🔗 Live Demo](#) | [📂 Source Code](./weather-app/)
+[📂 Source Code](./film-filter-app/)
 
 ---
 
-### 🛍️ [E-commerce Showcase](./ecommerce/)
+<!-- Add/remove project sections below as relevant -->
 
-A modern, fully responsive e-commerce storefront with product catalog and shopping cart functionality.
+<!-- Example for a project you want to feature:
+### 🌦️ Weather Dashboard
+A weather application displaying real-time meteorological data powered by the Open-Meteo API.
 
 **Key Features:**
-- Mobile-first responsive design
-- Product grid with category filtering
-- CSS Grid and Flexbox layouts
+- 7-day forecasts and current conditions
+- Geolocation-based data
+- Clean and user-friendly interface
 
-**Tech Stack:** HTML5, CSS3, Responsive Design, CSS Grid, Flexbox
-
-[🔗 Live Demo](#) | [📂 Source Code](./ecommerce/)
+**Tech Stack:** HTML5, JavaScript, REST API
+-->
 
 ---
 
 ## 🛠️ Technical Skills
 
-### 💻 Frontend Development
-- HTML5, CSS3, JavaScript (ES6+)
-- Responsive Web Design & Mobile-First approach
-- CSS Grid & Flexbox
-- User Experience (UX) & User Interface (UI) Design
-- DOM manipulation and event-driven programming
-- RESTful API integration and data handling
-
-### ⚙️ Backend & Server-Side Development
-- **Java** (Standard Edition & Enterprise Edition)
-- **C#** (Base & Advanced)
-- **Python** (scripting & data analysis)
-- Microservices Architectures (Java)
-- Web server configuration
-- Docker & containerization
-
-### 🗄️ Database & Data Management
-- Relational Databases & SQL
-- NoSQL Databases
-- Big Data & Cloud Computing
-- Data modeling and optimization
-
-### 🔒 Cybersecurity & Quality Assurance
-- Cybersecurity fundamentals
-- IT Security best practices
-- Test Automation (JUnit, Build & Automation)
-- Quality Assurance methodologies
-- Code testing and debugging
-
-### 🌐 Networking & Infrastructure
-- Network communication protocols
-- Web server configuration
-- IT infrastructure basics
-- System security implementation
-
-### 📐 Software Engineering & Methodologies
-- Software Analysis & Design (UML)
-- Project Management methodologies
-- Agile development practices
-- Version control (Git/GitHub)
-- Clean code principles and best practices
-
----
-
-## 🎯 Additional Competencies
-
-### 🧠 Core Technical Skills
-- **Natural Language Processing** (NLTK, text analysis)
-- **Mathematical Logic** for algorithm design
-- **Technical English** for documentation and communication
-- Problem-solving and analytical thinking
-
-### 📚 Legal & Professional Knowledge
-- IT Law fundamentals
-- Data protection and privacy regulations
-- Software licensing and intellectual property
-
-### 🤝 Soft Skills
-- Project organization and time management
-- Technical documentation writing
-- Team collaboration and communication
-- Continuous learning and adaptation to new technologies
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+), Responsive Web Design
+- **Mobile:** React Native
+- **Backend:** Java, C#, Python
+- **Databases:** SQL, NoSQL
+- **DevOps:** Docker, Containerization
+- **Other Skills:** Data Analysis, Git & Version Control, Test Automation, Agile Methodologies
 
 ---
 
 ## 🎓 Education
 
-**ITS Diploma** - Digital Technologies  
-*Currently enrolled*
-
-**Technical High School Diploma in Computer Science**  
-*Completed*
-
-Continuously expanding my knowledge through online courses, technical documentation, and hands-on projects.
+**ITS Diploma** – Digital Technologies (In progress)  
+**Technical High School Diploma in Computer Science** (Completed)
 
 ---
 
 ## 🏆 Achievements & Goals
 
-- Successfully developed and deployed multiple web applications
+- Developed and launched multiple web and mobile applications
 - Proficient in integrating third-party APIs and services
-- Strong foundation in both frontend and backend technologies
-
-**Future Goals:**
-- Master advanced React patterns 
-- Deepen backend development skills with Node.js and databases
-- Contribute to open-source projects
-- Launch freelance services on Fiverr and Upwork
-- Build a full-stack portfolio application
+- Solid foundation in both frontend and backend development
+- **Future Goals:**  
+  - Master advanced React patterns  
+  - Deepen backend development with Node.js and databases  
+  - Contribute to open-source projects  
+  - Build a comprehensive full-stack portfolio
 
 ---
 
-## 📫 Get In Touch
+## 📫 Contact
 
-I'm always open to discussing new projects, opportunities, or collaborations!
-
-📧 **Email:** [jacoporusso2811@gmail.com](mailto:jacoporusso2811@gmail.com)  
-🔗 **LinkedIn:** [linkedin.com/in/jacopo-russo](https://www.linkedin.com/in/jacopo-russo-381530350/)  
-💻 **GitHub:** [github.com/Pino0511](https://github.com/Pino0511)
-
+- **Email:** jacoporusso2811@gmail.com
+- **LinkedIn:** [linkedin.com/in/jacopo-russo](https://www.linkedin.com/in/jacopo-russo)
 ---
 
-> 📌 **Note:** This portfolio is continuously evolving. Check back regularly for new projects and updates!
->
-> ⭐ If you find my work interesting, feel free to star this repository!
-
----
-
-*Last updated: October 2025*
+> 📌 This portfolio is continually updated — check back regularly for new projects and enhancements!
