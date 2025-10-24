@@ -1,0 +1,42 @@
+POST http://127.0.0.1:8080/creatures
+Content-Type: application/json
+
+{
+    "name": "Pino",
+    "race": "HUMAN",
+    "strength": 900000,
+    "defense": 1000,
+    "health": 100,
+    "level": 1
+}
+
+###
+
+GET http://127.0.0.1:8080/creatures
+
+###
+
+GET http://127.0.0.1:8080/creatures/1
+
+###
+
+PUT http://127.0.0.1:8080/creatures/2
+Content-Type: application/json
+
+{
+    "name": "Dino",
+    "race": "VAMPIRE",
+    "strength": 90,
+    "defense": 90,
+    "health": 100,
+    "level": 1
+}
+
+###
+
+DELETE http://127.0.0.1:8080/creatures/1
+
+###
+
+GET http://127.0.0.1:8080/fight?id1=1&id2=2
+
