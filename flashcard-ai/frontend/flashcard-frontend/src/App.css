@@ -1,0 +1,285 @@
+:root {
+  --main-bg: #fafdfe;
+  --primary: #15b9b0;
+  --primary-hover: #11967b;
+  --accent: #e0fff3;
+  --error-bg: #ffecf0;
+  --error-border: #e56e87;
+  --error-text: #9b2323;
+  --card-bg: linear-gradient(135deg, #e5f2f1 60%, #fff 100%);
+  --card-bg-back: linear-gradient(135deg,#d7f5f3 60%, #fdfffc 100%);
+  --border: #A1DED9;
+  --shadow: 0 6px 22px 0 rgba(52,128,125,0.10);
+}
+
+body {
+  margin: 0;
+  background: var(--main-bg);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.root-container {
+  max-width: 480px;
+  margin: 2.1rem auto 0 auto;
+  padding: 1.2rem 0.7rem 2.5rem 0.7rem;
+  background: #fff;
+  box-shadow: 0 2px 16px 0 rgba(50,100,125,0.10);
+  min-height: 85vh;
+  border-radius: 22px;
+}
+
+.title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.2rem;
+  font-weight: 650;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+}
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  align-items: stretch;
+}
+
+.text-area {
+  min-height: 90px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--primary);
+  background: var(--main-bg);
+  padding: 1em;
+  resize: vertical;
+  transition: border-color .2s;
+}
+.text-area:focus {
+  border-color: var(--primary-hover);
+  background: #eefbf7;
+}
+.gen-btn, .reset-btn {
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.7em 1.2em;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0.2em;
+  margin-right: 0.4em;
+  transition: background .2s;
+}
+.gen-btn {
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.63em;
+  justify-content: center;
+  box-shadow: 0 2px 10px 0 rgba(20, 170, 160, 0.11);
+}
+.gen-btn:disabled {
+  background: #aed9d3;
+}
+.gen-btn:active { background: var(--primary-hover); }
+.reset-btn {
+  background: #eee;
+  color: var(--primary-hover);
+  border: 1px solid #cde;
+  box-shadow: none;
+}
+
+.error-msg {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1.2px solid var(--error-border);
+  padding: .8em 1.2em;
+  border-radius: 8px;
+  margin: 1.2rem auto 0 auto;
+  max-width: 415px;
+  text-align: center;
+}
+
+.flashcard-section {
+  margin: 2.1rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1em;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65em;
+  font-size: 1.13rem;
+  margin-bottom: 1.1rem;
+  margin-top: -0.2em;
+}
+.navigation button {
+  border: none;
+  background: var(--accent);
+  color: var(--primary-hover);
+  padding: 0.48em 0.89em;
+  border-radius: 99px;
+  font-size: 1.34em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background .2s;
+  box-shadow: 0 1px 4px rgba(54,167,156,0.06);
+  outline: none;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+}
+.navigation button:disabled, .navigation button[disabled] {
+  background: #f2f2f2;
+  color: #8cacae;
+  cursor: default;
+  box-shadow: none;
+}
+.shuffle-btn { margin-left: 10px !important; font-size:1.07em; padding: 0.6em 1.09em; background: #ddeff3; color: #0c4b6b;}
+.shuffle-btn:active { background: #c7e9efff;}
+
+.flashcard-section .hint {
+  color: var(--primary-hover);
+  margin-top: .2em;
+  margin-bottom: .8em;
+  font-size: 1em;
+  opacity: .85;
+  text-align: center;
+  font-style: italic;
+  animation: hintPulse 2.2s infinite;
+}
+@keyframes hintPulse {
+  0% { opacity: .82;}
+  50% { opacity: 1;}
+  100% { opacity: .82;}
+}
+
+/* --- MIGLIORAMENTO FLIP-CARD ANIMAZIONE --- */
+.flip-card {
+  perspective: 1200px;
+  width: 355px;
+  min-width: 240px;
+  max-width: 99vw;
+  height: 235px;
+  margin: 0 auto 4px auto;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.22s cubic-bezier(.51,.21,.11,1.01), transform 0.18s;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition:
+    transform 0.50s cubic-bezier(.22,1.01,.45,1.09),
+    box-shadow 0.44s cubic-bezier(.18,.64,.45,1.24);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg) scale(1.04);
+  box-shadow: 0 12px 40px 0 rgba(32,80,70,0.20), 0 2px 14px 0 rgba(51,120,105,.10);
+}
+.flip-card:active,
+.flip-card:focus {
+  transform: scale(1.018);
+  box-shadow: 0 8px 24px 0 rgba(22,70,66,0.10);
+}
+.flip-card:hover {
+  transform: scale(1.024) translateY(-3px);
+  box-shadow: 0 14px 33px 0 rgba(20,90,70,0.14);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 17px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.18rem;
+  gap: 1em;
+  padding: 2.4em 1.15em 1.28em 1.15em;
+  border: 1.7px solid var(--border);
+  transition: box-shadow 0.25s, background 0.25s;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: var(--card-bg-back);
+}
+
+.card-label {
+  font-size: 0.98em;
+  color: var(--primary-hover);
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  padding-bottom: .13em;
+  text-transform: uppercase;
+}
+.card-content {
+  color: #15616d;
+  font-size: 1.19em;
+  font-weight: 500;
+  text-align: center;
+}
+.card-tip {
+  font-size: .97em;
+  color: #346c7c;
+  opacity: .75;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: .65em;
+  font-size: 1.08em;
+  color: #21b1a3;
+  justify-content: center;
+  margin: 0.35em 0;
+}
+
+.desc {
+  margin-bottom: 0.8em;
+  color: #3b6e87;
+  font-size: 1.08em;
+  opacity: .84;
+  text-align: center;
+}
+
+.lang-label {
+  font-size: 1.07em;
+  margin-bottom: 0.3em;
+  color: #11967b;
+}
+.lang-select {
+  margin-bottom: 1em;
+  font-size: 1.07em;
+  padding: 0.3em 0.55em;
+  border-radius: 6px;
+  border: 1.2px solid #aeded5;
+  background: #e5f4f7;
+  color: #096e4b;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 650px) {
+  .root-container {padding: 0.4rem;}
+  .flip-card, .flip-card-inner {min-width: 98vw; max-width: 99vw;}
+  .input-form, .flashcard-section {width: 99vw;}
+}
