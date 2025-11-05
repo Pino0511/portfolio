@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "AIzaSyAEzQ8SCR3uXBptiYW8KvTtPWFOxp0fWFU"
+API_KEY = "*****"
 
 genai.configure(api_key=API_KEY)
 @app.route('/')
