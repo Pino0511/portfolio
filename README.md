@@ -42,10 +42,58 @@ Welcome to my portfolio! I'm **Jacopo Russo**, an Italian web and mobile develop
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
 ![REST API](https://img.shields.io/badge/-REST_API-009688?style=flat&logo=fastapi&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/-Spring_Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white)
 
 ---
 
 ## 💼 Featured Projects
+
+
+### 🎲 Flashcard AI Web App
+> AI-powered flashcard generation with multilingual support
+
+**Description:**  
+A full-stack AI-powered flashcard generation web application that leverages OpenAI/Gemini APIs to automatically create educational flashcards from custom text. Features an interactive React frontend with smooth flipping animations and a Flask REST API backend.
+
+**✨ Key Features:**
+- 🤖 AI-generated flashcards using OpenAI/Gemini APIs
+- 🌍 Multilingual flashcard creation support
+- 🔄 Interactive card flipping with smooth animations
+- 🎨 Modern and responsive user interface
+- ⚡ Error handling for API responses and user input
+- 💾 Sample cards with easy customization
+
+**🔧 Tech Stack:**  
+`React` • `Flask` • `Python` • `OpenAI API` • `Gemini API` • `REST API` • `JavaScript`
+
+📂 **[View Source Code](./flashcard-ai/)**
+
+---
+
+### ⚔️ War of Races - Fantasy Battle System
+> Spring Boot REST API for managing fantasy creatures and battles
+
+**Description:**  
+A comprehensive Spring Boot application that provides a RESTful API for managing fantasy creatures and races in a battle system. Features CRUD operations for creatures, race management with unique characteristics, and a battle simulation system with damage calculations.
+
+**✨ Key Features:**
+- 💉 Complete CRUD operations for creatures and races
+- ⚔️ Battle simulation system with complex damage calculations
+- 🎯 Race-specific bonuses and special abilities
+- 📊 Health, attack, defense stats management
+- 🛡️ Predefined fantasy races (Elf, Dwarf, Orc)
+- 💾 SQLite database integration
+
+**🔧 Tech Stack:**  
+`Spring Boot` • `Java` • `REST API` • `SQLite` • `Maven` • `JPA/Hibernate`
+
+📂 **[View Source Code](./creature-api/warofraces/)**
+
+---
+
 
 ### 🕹️ Pokedex Mobile App
 > A comprehensive Pokédex application for iOS and Android
@@ -119,10 +167,11 @@ A weather application that displays real-time meteorological data using the Open
 
 ## 🎯 What I'm Currently Working On
 
-- 🔭 Building more full-stack applications
-- 🌱 Learning advanced React patterns and state management
-- 👯 Looking to collaborate on open-source projects
-- 💬 Expanding my knowledge in cloud technologies and DevOps
+- 🤖 Integrating more AI-powered features in web applications
+- ☘️ Building enterprise-level Spring Boot microservices
+- 📊 Exploring data visualization and analytics dashboards
+- 🚀 Learning Docker and Kubernetes for containerization
+- 👯 Looking to collaborate on full-stack open-source projectsologies and DevOps
 
 ---
 
