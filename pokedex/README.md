@@ -16,7 +16,7 @@ It allows you to browse a list of Pokémon, view their details, types, abilities
 
 ## Screenshots
 
-_Add your screenshots here if you want_
+![Screenshot 1](pokedex.png)
 
 ## Getting Started
 
