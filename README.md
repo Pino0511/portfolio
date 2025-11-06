@@ -1,96 +1,149 @@
-# 👨‍💻 Jacopo Russo – Web Developer Portfolio
+# 👨‍💻 Jacopo Russo | Full-Stack Web Developer
 
-Welcome to my personal portfolio! I am Jacopo Russo, an Italian web and mobile developer with a Computer Science diploma and currently studying Digital Technologies at ITS. I am passionate about building innovative digital solutions and continuously improving my technical and analytical skills.
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/jacopo-russo)
+
+**Building innovative digital solutions with modern technologies**
+
+</div>
 
 ---
 
 ## 🚀 About Me
 
-I create dynamic web and mobile applications with a strong focus on clean code, user experience, and modern software practices. My expertise spans from frontend design and development to backend architecture and data analysis. I thrive on learning new technologies and tackling challenging projects.
+Welcome to my portfolio! I'm **Jacopo Russo**, an Italian web and mobile developer passionate about creating elegant, functional, and user-centered applications.
+
+🎓 **Background:**
+- Computer Science Diploma
+- Currently studying Digital Technologies at ITS
+- Continuous learner with a growth mindset
+
+💡 **What I Do:**
+- Design and develop responsive web applications
+- Build cross-platform mobile apps
+- Create clean, maintainable, and scalable code
+- Focus on UI/UX design and best practices
+- Data analysis and backend architecture
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![React Native](https://img.shields.io/badge/-React_Native-61DAFB?style=flat&logo=react&logoColor=black)
+
+### Backend & Tools
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
+![REST API](https://img.shields.io/badge/-REST_API-009688?style=flat&logo=fastapi&logoColor=white)
 
 ---
 
 ## 💼 Featured Projects
 
 ### 🕹️ Pokedex Mobile App
-A Pokédex-inspired cross-platform mobile app built with React Native, designed to display and search Pokémon data retrieved from public APIs.
+> A comprehensive Pokédex application for iOS and Android
 
-**Key Features:**
-- Full Pokémon catalog with real-time API fetching
-- Interactive search and advanced filtering
-- Modern, responsive mobile UI for both iOS and Android
+**Description:**  
+A cross-platform mobile app built with React Native that displays and searches through Pokémon data retrieved from public APIs. Features an intuitive interface with smooth animations and real-time data fetching.
 
-**Tech Stack:** React Native, JavaScript (ES6+), Public APIs
+**✨ Key Features:**
+- 📱 Full Pokémon catalog with real-time API integration
+- 🔍 Advanced search and filtering capabilities
+- 🎨 Modern, responsive UI/UX design
+- ⚡ Fast performance on both iOS and Android
+- 📊 Detailed Pokémon stats and information
 
-[📂 Source Code](./pokedex/)
+**🔧 Tech Stack:**  
+`React Native` • `JavaScript (ES6+)` • `RESTful APIs` • `Async/Await` • `React Hooks`
+
+📂 **[View Source Code](./pokedex/)**
 
 ---
 
 ### 🎬 Film Filter App
-An interactive web app for browsing and filtering movies using a public film API.
+> Smart movie browsing with advanced filtering
 
-**Key Features:**
-- Real-time filtering by genre, release year, and language
-- Responsive design optimized for all devices
-- Asynchronous data fetching with robust error handling
+**Description:**  
+An interactive web application that allows users to browse, filter, and discover movies using a public film API. Features responsive design and smooth user experience across all devices.
 
-**Tech Stack:** HTML5, CSS3, JavaScript (ES6+), Fetch API
+**✨ Key Features:**
+- 🎯 Real-time filtering by genre, year, and language
+- 📱 Fully responsive design for all screen sizes
+- ⚡ Asynchronous data fetching with error handling
+- 🎨 Clean and intuitive user interface
+- 🔄 Dynamic content loading
 
-[📂 Source Code](./film-filter-app/)
+**🔧 Tech Stack:**  
+`HTML5` • `CSS3` • `JavaScript (ES6+)` • `Fetch API` • `Responsive Design`
 
----
-
-<!-- Add/remove project sections below as relevant -->
-
-<!-- Example for a project you want to feature:
-### 🌦️ Weather Dashboard
-A weather application displaying real-time meteorological data powered by the Open-Meteo API.
-
-**Key Features:**
-- 7-day forecasts and current conditions
-- Geolocation-based data
-- Clean and user-friendly interface
-
-**Tech Stack:** HTML5, JavaScript, REST API
--->
+📂 **[View Source Code](./film-filter-app/)**
 
 ---
 
-## 🛠️ Technical Skills
+### ☀️ Weather Dashboard
+> Real-time weather forecasting application
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+), Responsive Web Design
-- **Mobile:** React Native
-- **Backend:** Java, C#, Python
-- **Databases:** SQL, NoSQL
-- **DevOps:** Docker, Containerization
-- **Other Skills:** Data Analysis, Git & Version Control, Test Automation, Agile Methodologies
+**Description:**  
+A weather application that displays real-time meteorological data using the OpenMeteo API. Features 7-day forecasts, current conditions, and location-based weather information.
 
----
+**✨ Key Features:**
+- 🌤️ 7-day weather forecasts with hourly details
+- 📍 Geolocation-based automatic weather detection
+- 🌡️ Temperature, humidity, and wind data visualization
+- 💨 Clean and user-friendly interface
+- 📊 Weather charts and visual indicators
 
-## 🎓 Education
+**🔧 Tech Stack:**  
+`HTML5` • `JavaScript` • `REST API` • `Geolocation API` • `Chart.js`
 
-**ITS Diploma** – Digital Technologies (In progress)  
-**Technical High School Diploma in Computer Science** (Completed)
-
----
-
-## 🏆 Achievements & Goals
-
-- Developed and launched multiple web and mobile applications
-- Proficient in integrating third-party APIs and services
-- Solid foundation in both frontend and backend development
-- **Future Goals:**  
-  - Master advanced React patterns  
-  - Deepen backend development with Node.js and databases  
-  - Contribute to open-source projects  
-  - Build a comprehensive full-stack portfolio
+📂 **[View Source Code](./weather-dashboard/)**
 
 ---
 
-## 📫 Contact
+## 📊 GitHub Stats
 
-- **Email:** jacoporusso2811@gmail.com
-- **LinkedIn:** [linkedin.com/in/jacopo-russo](https://www.linkedin.com/in/jacopo-russo)
+<div align="center">
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Pino0511&layout=compact&theme=radical)
+
+</div>
+
 ---
 
-> 📌 This portfolio is continually updated — check back regularly for new projects and enhancements!
+## 🎯 What I'm Currently Working On
+
+- 🔭 Building more full-stack applications
+- 🌱 Learning advanced React patterns and state management
+- 👯 Looking to collaborate on open-source projects
+- 💬 Expanding my knowledge in cloud technologies and DevOps
+
+---
+
+## 📫 Get In Touch
+
+<div align="center">
+
+**Let's connect and build something amazing together!**
+
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Pino0511)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/jacopo-russo)
+[![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+
+</div>
+
+---
+
+<div align="center">
+
+**💡 Open to opportunities | 🚀 Always learning | 🌟 Passionate about code**
+
+*Thanks for visiting my portfolio!*
+
+</div>
