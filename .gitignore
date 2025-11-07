@@ -1,0 +1,49 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build (.NET/C#)
+*.dll
+*.exe
+bin/
+obj/
+*.user
+*.suo
+
+# Java
+*.class
+*.jar
+target/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
