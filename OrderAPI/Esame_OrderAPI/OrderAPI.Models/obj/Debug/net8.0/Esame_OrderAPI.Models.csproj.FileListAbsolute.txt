@@ -1,0 +1,12 @@
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\bin\Debug\net8.0\Esame_OrderAPI.Models.deps.json
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\bin\Debug\net8.0\Esame_OrderAPI.Models.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\bin\Debug\net8.0\Esame_OrderAPI.Models.pdb
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.csproj.AssemblyReference.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.AssemblyInfoInputs.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.AssemblyInfo.cs
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.csproj.CoreCompileInputs.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\refint\Esame_OrderAPI.Models.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\Esame_OrderAPI.Models.pdb
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.Models\obj\Debug\net8.0\ref\Esame_OrderAPI.Models.dll

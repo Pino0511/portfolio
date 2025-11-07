@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "OrderNumber": "ORD-20250730-001",
+    "Total": 150.75,
+    "CreatedAt": "2025-07-30T14:44:18.377Z",
+    "CustomerId": 1
+  },
+  {
+    "Id": 2,
+    "OrderNumber": "ORD-20250730-002",
+    "Total": 299.99,
+    "CreatedAt": "2025-07-30T16:10:05.123Z",
+    "CustomerId": 3
+  },
+  {
+    "Id": 3,
+    "OrderNumber": "ORD-20250731-001",
+    "Total": 49.50,
+    "CreatedAt": "2025-07-31T09:00:00.000Z",
+    "CustomerId": 6
+  }
+]

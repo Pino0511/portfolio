@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Esame_OrderAPI</AssemblyName>
+    <RootNamespace>Esame_OrderAPI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrderAPI.BL\Esame_OrderAPI.BL.csproj" />
+    <ProjectReference Include="..\OrderAPI.Models\Esame_OrderAPI.Models.csproj" />
+  </ItemGroup>
+
+</Project>

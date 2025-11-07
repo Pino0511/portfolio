@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrderAPI.DL\Esame_OrderAPI.DL.csproj" />
+    <ProjectReference Include="..\OrderAPI.Models\Esame_OrderAPI.Models.csproj" />
+  </ItemGroup>
+
+</Project>

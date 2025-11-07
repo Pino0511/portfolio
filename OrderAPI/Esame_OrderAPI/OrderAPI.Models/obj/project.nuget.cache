@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ti29LuO7s40=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jacop\\.nuget\\packages\\microsoft.powerbi.api\\4.22.0\\microsoft.powerbi.api.4.22.0.nupkg.sha512",
+    "C:\\Users\\jacop\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.24\\microsoft.rest.clientruntime.2.3.24.nupkg.sha512",
+    "C:\\Users\\jacop\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\jacop\\.nuget\\packages\\system.security.cryptography.cng\\4.7.0\\system.security.cryptography.cng.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

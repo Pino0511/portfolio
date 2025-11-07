@@ -1,0 +1,15 @@
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\bin\Debug\net8.0\Esame_OrderAPI.DL.deps.json
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\bin\Debug\net8.0\Esame_OrderAPI.DL.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\bin\Debug\net8.0\Esame_OrderAPI.DL.pdb
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\bin\Debug\net8.0\Esame_OrderAPI.Models.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\bin\Debug\net8.0\Esame_OrderAPI.Models.pdb
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.csproj.AssemblyReference.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.AssemblyInfoInputs.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.AssemblyInfo.cs
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.csproj.CoreCompileInputs.cache
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_Or.0C8621F3.Up2Date
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\refint\Esame_OrderAPI.DL.dll
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\Esame_OrderAPI.DL.pdb
+C:\Users\jacop\OneDrive\Desktop\scuola\ITS\Link\AleDotNet\avanzato\Esame_OrderAPI\OrderAPI.DL\obj\Debug\net8.0\ref\Esame_OrderAPI.DL.dll

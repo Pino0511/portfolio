@@ -1,0 +1,307 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\Esame_OrderAPI\\Esame_OrderAPI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\Esame_OrderAPI\\Esame_OrderAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\Esame_OrderAPI\\Esame_OrderAPI.csproj",
+        "projectName": "Esame_OrderAPI",
+        "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\Esame_OrderAPI\\Esame_OrderAPI.csproj",
+        "packagesPath": "C:\\Users\\jacop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\Esame_OrderAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jacop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\Esame_OrderAPI.BL.csproj": {
+                "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\Esame_OrderAPI.BL.csproj"
+              },
+              "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\Esame_OrderAPI.BL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\Esame_OrderAPI.BL.csproj",
+        "projectName": "Esame_OrderAPI.BL",
+        "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\Esame_OrderAPI.BL.csproj",
+        "packagesPath": "C:\\Users\\jacop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.BL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jacop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\Esame_OrderAPI.DL.csproj": {
+                "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\Esame_OrderAPI.DL.csproj"
+              },
+              "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\Esame_OrderAPI.DL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\Esame_OrderAPI.DL.csproj",
+        "projectName": "Esame_OrderAPI.DL",
+        "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\Esame_OrderAPI.DL.csproj",
+        "packagesPath": "C:\\Users\\jacop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.DL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jacop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj": {
+                "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj",
+        "projectName": "Esame_OrderAPI.Models",
+        "projectPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\Esame_OrderAPI.Models.csproj",
+        "packagesPath": "C:\\Users\\jacop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jacop\\OneDrive\\Desktop\\scuola\\ITS\\Link\\AleDotNet\\avanzato\\Esame_OrderAPI\\OrderAPI.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jacop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.PowerBI.Api": {
+              "target": "Package",
+              "version": "[4.22.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
