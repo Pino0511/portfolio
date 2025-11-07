@@ -94,12 +94,12 @@ dotnet run
 
 
 ### 🎲 Flashcard AI Web App
+
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black) ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white) ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 > AI-powered flashcard generation with multilingual support
 
 **Description:**  
 A full-stack AI-powered flashcard generation web application that leverages OpenAI/Gemini APIs to automatically create educational flashcards 
-
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black) ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white) ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 from custom text. Features an interactive React frontend with smooth flipping animations and a Flask REST API backend.
 
 **✨ Key Features:**
