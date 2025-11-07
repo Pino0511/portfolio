@@ -52,11 +52,55 @@ Welcome to my portfolio! I'm **Jacopo Russo**, an Italian web and mobile develop
 ## 💼 Featured Projects
 
 
+### 🛍️ Order API
+
+![.NET](https://img.shields.io/badge/-.NET_8-512BD4?style=flat&logo=.net&logoColor=white) ![C#](https://img.shields.io/badge/-C%23-239120?style=flat&logo=c-sharp&logoColor=white) ![REST API](https://img.shields.io/badge/-REST_API-009688?style=flat&logo=fastapi&logoColor=white)
+
+> .NET 8 REST API for managing orders, customers and users
+
+**Description:** A comprehensive REST API built with .NET 8 and C# that provides a complete order management system with authentication and authorization. Features clean architecture design, JSON file-based persistence, and full CRUD operations for orders, customers, and users.
+
+**✨ Key Features:**
+- 👥 Complete customer management system
+- 📦 Order processing and tracking
+- 🔐 User authentication with Basic Auth
+- 💾 JSON file-based data persistence
+- 📊 RESTful API with Swagger documentation
+- 🏗️ Clean Architecture design pattern
+
+**🔧 Tech Stack:** `.NET 8` • `C#` • `REST API` • `JSON` • `Swagger/OpenAPI` • `Basic Authentication`
+
+**📝 Setup Instructions:**
+```bash
+# Clone and navigate to project
+cd OrderAPI/Esame_OrderAPI
+
+# Restore dependencies
+dotnet restore
+
+# Run the application
+dotnet run
+
+# Access Swagger UI at http://localhost:5001/swagger
+```
+
+**🔑 Environment Variables:**
+- No external API keys required
+- Data is stored in JSON files in `Data/` directory
+
+📂 **[View Source Code](./OrderAPI)**
+
+---
+
+
 ### 🎲 Flashcard AI Web App
 > AI-powered flashcard generation with multilingual support
 
 **Description:**  
-A full-stack AI-powered flashcard generation web application that leverages OpenAI/Gemini APIs to automatically create educational flashcards from custom text. Features an interactive React frontend with smooth flipping animations and a Flask REST API backend.
+A full-stack AI-powered flashcard generation web application that leverages OpenAI/Gemini APIs to automatically create educational flashcards 
+
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black) ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white) ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+from custom text. Features an interactive React frontend with smooth flipping animations and a Flask REST API backend.
 
 **✨ Key Features:**
 - 🤖 AI-generated flashcards using OpenAI/Gemini APIs
@@ -70,6 +114,44 @@ A full-stack AI-powered flashcard generation web application that leverages Open
 `React` • `Flask` • `Python` • `OpenAI API` • `Gemini API` • `REST API` • `JavaScript`
 
 📂 **[View Source Code](./flashcard-ai/)**
+
+
+**📝 Setup Instructions:**
+```bash
+# Backend Setup
+cd flashcard-ai/backend
+
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# Install dependencies
+pip install flask flask-cors google-generativeai
+
+# Run backend
+python app.py
+
+# Frontend Setup (in a new terminal)
+cd flashcard-ai/frontend/flashcard-frontend
+
+# Install dependencies
+npm install
+
+# Run frontend
+npm start
+```
+
+**🔑 Environment Variables:**
+Create a `.env` file in the backend directory or set API key directly in `app.py`:
+- `API_KEY`: Your OpenAI or Gemini API key
+  - Get OpenAI key: https://platform.openai.com/api-keys
+  - Get Gemini key: https://makersuite.google.com/app/apikey
+
 
 ---
 
@@ -151,7 +233,7 @@ A weather application that displays real-time meteorological data using the Open
 **🔧 Tech Stack:**  
 `HTML5` • `JavaScript` • `REST API` • `Geolocation API` • `Chart.js`
 
-📂 **[View Source Code](./weather-dashboard/)**
+📂 **[View Source Code](./weatherApp/)**
 
 ---
 
