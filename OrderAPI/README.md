@@ -70,6 +70,10 @@ The API documentation provides an interactive interface where you can:
 - View request/response schemas
 - Authenticate using the login endpoint
 
+## Screenshot
+
+![OrderAPI screenshot](./screenshot.png)
+
 ---
 
 ## 📖 API Documentation
