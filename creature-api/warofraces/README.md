@@ -34,6 +34,9 @@ This application provides a REST API for managing fantasy creatures and races. K
 - `/api/races` - Race information
 - `/api/battles` - Battle simulation
 
+## Screenshot
+![War of Races screenshot](./creature.png)
+
 ## Project Structure
 
 ```
