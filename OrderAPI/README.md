@@ -70,7 +70,7 @@ The API documentation provides an interactive interface where you can:
 Screenshot
 ----------
 
-![OrderAPI screenshot](OrderAPI/screenshot.png)
+![OrderAPI screenshot](screenshot.png)
 
 📖 API Documentation
 --------------------
