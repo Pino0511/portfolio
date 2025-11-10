@@ -6,10 +6,9 @@
 
 ## Screenshots
 
-![Screenshot 1](flashcard-ai/screenREADME/Screenshot%202025-10-16%20195217.png)
-![Screenshot 2](flashcard-ai/screenREADME/Screenshot%202025-10-16%20195312.png)
-![Screenshot 3](flashcard-ai/screenREADME/Screenshot%202025-10-16%20195333.png)
-![Screenshot 4](flashcard-ai/screenREADME/Screenshot%202025-10-16%20195344.png)
+![Screenshot 1](./screenREADME/screenshot1.png)![Screenshot 2](flashcard-![Screenshot 2](./screenREADME/screenshot2.png)
+![Screenshot 3](./screenREADME/screenshot3.png)
+![Screenshot 4](./screenREADME/screenshot4.png)
 
 ## Getting Started
 
