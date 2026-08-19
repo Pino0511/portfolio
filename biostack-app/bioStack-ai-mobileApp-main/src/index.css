@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f4f1ec;
+  --color-forest-50: #eef5f0;
+  --color-forest-100: #d8e8de;
+  --color-forest-500: #3d6b54;
+  --color-forest-600: #2d5a45;
+  --color-forest-700: #1f4d3a;
+  --color-forest-800: #173d2e;
+  --color-forest-900: #0f2a20;
+  --color-forest-950: #0a1c15;
+
+  --color-moss-300: #b7d4c0;
+  --color-moss-400: #9bc4a8;
+
+  --color-stone-50: #faf9f7;
+  --color-stone-100: #f0ece6;
+  --color-stone-200: #e2dbd2;
+  --color-stone-300: #cfc5b8;
+  --color-stone-400: #a89f93;
+  --color-stone-500: #8a847c;
+  --color-stone-600: #6e6860;
+  --color-stone-700: #3f3b37;
+  --color-stone-800: #242220;
+  --color-stone-900: #171614;
+  --color-stone-950: #0e0d0c;
+
+  --color-ink-400: #8a847c;
+  --color-ink-500: #6e6860;
+  --color-ink-600: #524d47;
+  --color-ink-700: #3a3632;
+  --color-ink-800: #242220;
+  --color-ink-900: #171614;
+  --color-ink-950: #0e0d0c;
+
+  --font-family-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(23, 22, 20, 0.04), 0 8px 24px rgba(23, 22, 20, 0.06);
+
+  --animate-fade-in: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-scale: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Fallback utilities mapped to design tokens so dark mode toggles affect custom names
+   These are used in the app for semantic class names (bg-canvas, text-ink-900, etc.)
+*/
+:root {
+  --app-bg: var(--color-canvas);
+  --app-text: var(--color-ink-900);
+  --app-surface: var(--color-stone-50);
+  --app-surface-2: var(--color-stone-100);
+  --app-muted: var(--color-stone-500);
+}
+
+.bg-canvas { background: var(--app-bg) !important; }
+.text-ink-900 { color: var(--app-text) !important; }
+.bg-surface { background: var(--app-surface) !important; }
+.bg-surface-2 { background: var(--app-surface-2) !important; }
+.text-muted { color: var(--app-muted) !important; }
+.border-stone-200 { border-color: var(--color-stone-200) !important; }
+
+.dark .bg-canvas,
+html.dark .bg-canvas { background: #0e0d0c !important; }
+.dark .text-ink-900,
+html.dark .text-ink-900 { color: #faf9f7 !important; }
+.dark .bg-surface,
+html.dark .bg-surface { background: #0e0d0c !important; }
+.dark .bg-surface-2,
+html.dark .bg-surface-2 { background: #121110 !important; }
+.dark .text-muted,
+html.dark .text-muted { color: #a8a29e !important; }
+.dark .border-stone-200,
+html.dark .border-stone-200 { border-color: #2a2a2a !important; }
+.dark .border-stone-300,
+html.dark .border-stone-300 { border-color: #3d3a35 !important; }
+.dark .border-stone-100,
+html.dark .border-stone-100 { border-color: #2a2a2a !important; }
+.dark .bg-white,
+html.dark .bg-white { background-color: #171614 !important; }
+.dark .bg-stone-50,
+html.dark .bg-stone-50 { background-color: #171614 !important; }
+.dark .bg-stone-100,
+html.dark .bg-stone-100 { background-color: #1c1b19 !important; }
+.dark .bg-stone-200,
+html.dark .bg-stone-200 { background-color: #242220 !important; }
+.dark .text-stone-500,
+html.dark .text-stone-500 { color: #d6d3d1 !important; }
+.dark .text-stone-600,
+html.dark .text-stone-600 { color: #e7e5e4 !important; }
+.dark .text-stone-700,
+html.dark .text-stone-700 { color: #f5f5f4 !important; }
+.dark .text-stone-400,
+html.dark .text-stone-400 { color: #e7e5e4 !important; }
+.dark .text-stone-300,
+html.dark .text-stone-300 { color: #f5f5f4 !important; }
+.dark .text-ink-400,
+html.dark .text-ink-400 { color: #d6d3d1 !important; }
+.dark .text-ink-500,
+html.dark .text-ink-500 { color: #e7e5e4 !important; }
+.dark .text-ink-600,
+html.dark .text-ink-600 { color: #f5f5f4 !important; }
+.dark .text-ink-700,
+html.dark .text-ink-700 { color: #fafaf9 !important; }
+
+.dark [class*="bg-white"] {
+  background-color: #171614 !important;
+}
+.dark [class*="bg-stone-50"] {
+  background-color: #171614 !important;
+}
+.dark [class*="bg-stone-100"] {
+  background-color: #1c1b19 !important;
+}
+.dark [class*="bg-stone-200"] {
+  background-color: #242220 !important;
+}
+.dark [class*="bg-forest-50"] {
+  background-color: #0f231a !important;
+}
+.dark [class*="bg-amber-50"] {
+  background-color: rgba(82, 56, 14, 0.22) !important;
+}
+.dark [class*="text-ink-900"] {
+  color: #fafaf9 !important;
+}
+.dark [class*="text-stone-900"] {
+  color: #f5f5f4 !important;
+}
+
+.dark .ghost-button-dark-hover:hover,
+html.dark .ghost-button-dark-hover:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+
+@keyframes scan {
+  0%, 100% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+/* Show visible focus outlines only when user is navigating with keyboard */
+.user-is-tabbing :focus {
+  outline: 3px solid rgba(31,77,58,0.9); /* forest color */
+  outline-offset: 2px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background: var(--color-canvas);
+  color: var(--color-ink-950);
+  overscroll-behavior-y: none;
+}
+
+.dark body,
+html.dark body {
+  color: #faf9f7;
+  background: #0e0d0c;
+}
+
+.safe-top {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.bg-hero-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(61, 107, 84, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(183, 212, 192, 0.18), transparent 50%),
+    linear-gradient(180deg, #f7f4ef 0%, #f4f1ec 40%, #ebe6de 100%);
+}
+
+.dark .bg-hero-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(155, 196, 168, 0.16), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 0% 30%, rgba(47, 90, 69, 0.25), transparent 50%),
+    linear-gradient(180deg, #121110 0%, #0e0d0c 50%, #0a1c15 100%);
+}
+
+.biometric-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(155, 196, 168, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 196, 168, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #9bc4a8, transparent);
+  box-shadow: 0 0 12px rgba(155, 196, 168, 0.8);
+  animation: scan 2.2s linear infinite;
+}
+
+/* Prefer readable defaults */
+button, input, a {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
