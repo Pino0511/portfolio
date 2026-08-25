@@ -1,0 +1,8 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+	compileOnly project(":modules:contacts-enterprise-manager:contacts-enterprise-manager-api")
+	
+	compileOnly group: "javax.mail", name: "mail", version: "1.4.7"
+	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
+	
+}

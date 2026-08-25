@@ -1,0 +1,12 @@
+dependencies {
+	api project(":modules:contacts-enterprise-manager:contacts-enterprise-manager-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../contacts-enterprise-manager-api/src/main/java"
+	testDir = "../contacts-enterprise-manager-test/src/testIntegration/java"
+}
+
+group = "contacts.enterprise.manager"

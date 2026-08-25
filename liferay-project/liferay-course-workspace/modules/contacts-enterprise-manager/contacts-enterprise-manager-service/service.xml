@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder package-path="contacts.enterprise.manager">
+	<namespace>CEM</namespace>
+	<entity name="Contact" local-service="true" remote-service="false">
+
+		<column name="contactId" primary="true" type="long" />
+
+		<column name="groupId" type="long" />
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="email" type="String" />
+		<column name="phoneNumber" type="String" />
+		<column name="company" type="String" />
+		<column name="jobTitle" type="String" />
+		<column name="notes" type="String" />
+		<column name="active" type="boolean" />
+
+		<order by="asc">
+			<order-column name="lastName" />
+		</order>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		
+		<finder name="G_E" return-type="Contact">
+			<finder-column name="groupId" />
+			<finder-column name="email" />
+		</finder>
+	</entity>
+	<entity name="SupportMessage" local-service="true" remote-service="false" uuid="true">
+            
+            <column name="messageId" type="long" primary="true" />
+
+            <column name="groupId" type="long" />
+            <column name="companyId" type="long" />
+            <column name="userId" type="long" />
+            <column name="userName" type="String" />
+            <column name="createDate" type="Date" />
+            <column name="modifiedDate" type="Date" />
+
+            <column name="senderName" type="String" />
+            <column name="senderEmail" type="String" />
+            <column name="subject" type="String" />
+            <column name="body" type="String" />
+            
+            <column name="replyText" type="String" />
+            <column name="isReplied" type="boolean" />
+
+            <finder name="UserId" return-type="Collection">
+                <finder-column name="userId" />
+            </finder>
+            
+            <finder name="IsReplied" return-type="Collection">
+                <finder-column name="isReplied" />
+            </finder>
+
+        </entity>
+</service-builder>

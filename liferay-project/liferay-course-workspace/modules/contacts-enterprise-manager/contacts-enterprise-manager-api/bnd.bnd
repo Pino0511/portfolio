@@ -1,0 +1,10 @@
+Bundle-Name: contacts-enterprise-manager-api
+Bundle-SymbolicName: contacts.enterprise.manager.api
+Bundle-Version: 1.0.1
+Export-Package:\
+	contacts.enterprise.manager.exception,\
+	contacts.enterprise.manager.model,\
+	contacts.enterprise.manager.service,\
+	contacts.enterprise.manager.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../contacts-enterprise-manager-service/service.xml
