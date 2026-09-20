@@ -1,12 +1,24 @@
-FROM eclipse-temurin:21-jdk-jammy
+# 1: Build dell'applicazione con Maven
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /app
 
-ARG JAR_FILE=target/*.jar
+# Copia prima il file pom.xml per scaricare le dipendenze (sfrutta la cache di Docker)
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
 
-COPY ${JAR_FILE} app.jar
+# Copia il codice sorgente e compila il JAR
+COPY src ./src
+RUN mvn package -DskipTests
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+# 2: Runtime leggero per la produzione
+FROM eclipse-temurin:21-jre-jammy
+WORKDIR /app
 
-#docker build -t app .
+# Copia il JAR generato nello STAGE 1
+COPY --from=build /app/target/*.jar app.jar
 
-#EXPOSE 3050
-#docker run -p 3050:8080 app
+# Espone la porta standard di Spring Boot (8080)
+EXPOSE 8080
+
+# Esegue l'applicazione
+ENTRYPOINT ["java", "-jar", "app.jar"]
