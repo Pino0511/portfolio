@@ -12,7 +12,9 @@ const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN;
 function loadGA(id?: string) {
   if (!id) return;
   (window as any).dataLayer = (window as any).dataLayer || [];
-  function gtag(){(window as any).dataLayer.push(arguments);} 
+  function gtag(...args: unknown[]) {
+    (window as any).dataLayer.push(args);
+  }
   (window as any).gtag = gtag;
   const script = document.createElement('script');
   script.async = true;

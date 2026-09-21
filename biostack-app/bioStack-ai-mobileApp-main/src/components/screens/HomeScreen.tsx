@@ -4,6 +4,7 @@ import { ProgressRing } from '../ui/ProgressRing';
 import { MetricCard } from '../ui/MetricCard';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
+import { BrandLogo } from '../ui/BrandLogo';
 import { useApp } from '../../context/AppContext';
 import { SkeletonScreen } from '../ui/Skeleton';
 
@@ -22,6 +23,10 @@ export function HomeScreen() {
 
   return (
     <Screen withBottomNav>
+      <div className="px-5 pt-4">
+        <BrandLogo className="mx-auto w-full max-w-[120px] -mb-2" alt="BioStack AI logo" />
+      </div>
+
       <ScreenHeader
         title={`Ciao, ${name}`}
         subtitle="Il tuo giorno di protocollo"

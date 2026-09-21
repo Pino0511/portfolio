@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "restCountriesClient", url = "https://restcountries.com/v3.1", fallback = WebCountryClientFallback.class)
 public interface IWebCountryClient {
 
-    // Ritorna lista di mappe (non DTO) per evitare problemi deserializzazione
-    @GetMapping("/name/{country}?fullText=true")
+    @GetMapping("/name/{country}")
     List<Map<String, Object>> getCountryInfo(@PathVariable("country") String country);
 }
-
-

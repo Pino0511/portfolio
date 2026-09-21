@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { t } from '../../i18n';
 import { Button } from '../ui/Button';
 import { Screen } from '../ui/Screen';
+import { BrandLogo } from '../ui/BrandLogo';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 import { useApp } from '../../context/AppContext';
 
@@ -108,11 +109,12 @@ export function WelcomeScreen() {
   return (
     <Screen className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-hero-glow" />
-      <div className="relative flex flex-1 flex-col px-6 pb-8 pt-14">
+      <div className="relative flex flex-1 flex-col px-6 pb-8 pt-10">
+        <BrandLogo className="mx-auto w-full max-w-[140px] -mb-2" alt="BioStack AI logo" />
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-forest-700 dark:text-moss-400">
           BioStack AI
         </p>
-        <h1 className="mt-5 max-w-[16ch] text-[34px] font-semibold leading-[1.12] tracking-tight text-ink-900 dark:text-stone-50">
+        <h1 className="mt-3 max-w-[16ch] text-[34px] font-semibold leading-[1.12] tracking-tight text-ink-900 dark:text-stone-50">
           {t('welcome_title')}
         </h1>
         <p className="mt-4 max-w-[32ch] text-[15px] leading-relaxed text-ink-600 dark:text-stone-300">

@@ -23,7 +23,8 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
     private final IWebWeatherClient weatherClient;
     private final CountryWeatherRepository repository;
 
-    public CountryWeatherServiceImpl(IWebCountryClient countryClient, IWebWeatherClient weatherClient, CountryWeatherRepository repository) {
+    public CountryWeatherServiceImpl(IWebCountryClient countryClient, IWebWeatherClient weatherClient,
+            CountryWeatherRepository repository) {
         this.countryClient = countryClient;
         this.weatherClient = weatherClient;
         this.repository = repository;
@@ -38,23 +39,26 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
         CountryDTO countryDTO = mapToCountryDTO(rawCountryData.get(0));
 
-        // Estrazione coordinate
-        List<Double> latlng = null;
-        if (countryDTO.getCapitalInfo() != null) {
-            latlng = (List<Double>) countryDTO.getCapitalInfo().get("latlng");
-        }
-        if (latlng == null || latlng.size() < 2) {
+        // Estrazione coordinate in modo sicuro (evita ClassCastException)
+        if (countryDTO.getCapitalInfo() == null || countryDTO.getCapitalInfo().get("latlng") == null) {
             throw new RuntimeException("Coordinate non disponibili per: " + countryDTO.getCapital());
         }
-        double lat = latlng.get(0);
-        double lon = latlng.get(1);
+
+        List<?> rawLatlng = (List<?>) countryDTO.getCapitalInfo().get("latlng");
+        if (rawLatlng.size() < 2) {
+            throw new RuntimeException("Coordinate non valide per: " + countryDTO.getCapital());
+        }
+
+        double lat = ((Number) rawLatlng.get(0)).doubleValue();
+        double lon = ((Number) rawLatlng.get(1)).doubleValue();
 
         // Chiamata meteo
         Map<String, Object> weatherData = weatherClient.getCurrentWeather(lat, lon, true);
-        Map<String, Object> current = (Map<String, Object>) weatherData.get("current_weather");
-        if (current == null) {
+        if (weatherData == null || !weatherData.containsKey("current_weather")) {
             throw new RuntimeException("Dati meteo non disponibili per: " + countryDTO.getCapital());
         }
+
+        Map<String, Object> current = (Map<String, Object>) weatherData.get("current_weather");
         double temperature = ((Number) current.get("temperature")).doubleValue();
         int weatherCode = ((Number) current.get("weathercode")).intValue();
         ZonedDateTime retrievedAt = ZonedDateTime.parse(current.get("time") + "Z");
@@ -64,7 +68,6 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         CountryWeather entity;
         if (existing.isPresent()) {
             entity = existing.get();
-            // aggiorna solo meteo
             entity.setTemperature(temperature);
             entity.setWeatherCode(weatherCode);
             entity.setRetrievedAt(retrievedAt);
@@ -105,15 +108,28 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
         repository.save(entity);
 
-        // Ricostruzione CountryDTO (semplificato)
+        return buildDTOFromEntity(entity);
+    }
+
+    // Metodo privato riutilizzabile anche per getAllCountriesWeather()
+    private CountryWeatherDTO buildDTOFromEntity(CountryWeather entity) {
         CountryDTO countryDTO = new CountryDTO();
         countryDTO.setName(entity.getCountry());
-        countryDTO.setCapital(List.of(entity.getCapital()));
         countryDTO.setPopulation(entity.getPopulation());
-        countryDTO.setCurrencies(Map.of(entity.getCurrency(), entity.getCurrency()));
-        countryDTO.setFlags(Map.of("png", entity.getFlagPng()));
 
-        WeatherDTO weatherDTO = new WeatherDTO(entity.getTemperature(), entity.getWeatherCode(),
+        if (entity.getCapital() != null) {
+            countryDTO.setCapital(List.of(entity.getCapital()));
+        }
+        if (entity.getCurrency() != null) {
+            countryDTO.setCurrencies(Map.of(entity.getCurrency(), entity.getCurrency()));
+        }
+        if (entity.getFlagPng() != null) {
+            countryDTO.setFlags(Map.of("png", entity.getFlagPng()));
+        }
+
+        WeatherDTO weatherDTO = new WeatherDTO(
+                entity.getTemperature(),
+                entity.getWeatherCode(),
                 entity.getRetrievedAt());
 
         CountryWeatherDTO dto = new CountryWeatherDTO();
@@ -153,7 +169,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
     }
 
     private void mapDTOToEntity(CountryDTO countryDTO, double temperature, int weatherCode, ZonedDateTime retrievedAt,
-                                CountryWeather entity) {
+            CountryWeather entity) {
         entity.setCountry(countryDTO.getName());
         if (countryDTO.getCapital() != null && !countryDTO.getCapital().isEmpty()) {
             entity.setCapital(countryDTO.getCapital().get(0));
@@ -173,25 +189,8 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
     @Override
     public List<CountryWeatherDTO> getAllCountriesWeather() {
         List<CountryWeather> entities = repository.findAll();
-        return entities.stream().map(entity -> {
-            CountryDTO countryDTO = new CountryDTO();
-            countryDTO.setName(entity.getCountry());
-            countryDTO.setCapital(List.of(entity.getCapital()));
-            countryDTO.setPopulation(entity.getPopulation());
-            countryDTO.setCurrencies(Map.of(entity.getCurrency(), entity.getCurrency()));
-            countryDTO.setFlags(Map.of("png", entity.getFlagPng()));
-
-            WeatherDTO weatherDTO = new WeatherDTO(entity.getTemperature(), entity.getWeatherCode(),
-                    entity.getRetrievedAt());
-
-            CountryWeatherDTO dto = new CountryWeatherDTO();
-            dto.setCountry(countryDTO);
-            dto.setWeather(weatherDTO);
-            dto.setVisited(entity.getVisited());
-            dto.setNotes(entity.getNotes());
-            dto.setRating(entity.getRating());
-
-            return dto;
-        }).collect(Collectors.toList());
+        return entities.stream()
+                .map(this::buildDTOFromEntity)
+                .collect(Collectors.toList());
     }
 }
