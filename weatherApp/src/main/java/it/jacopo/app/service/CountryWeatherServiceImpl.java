@@ -6,8 +6,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import feign.FeignException;
 import it.jacopo.app.client.IWebCountryClient;
 import it.jacopo.app.client.IWebWeatherClient;
 import it.jacopo.app.entity.CountryWeather;
@@ -32,30 +35,49 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
     @Override
     public CountryWeatherDTO getCountryWeather(String countryName) {
-        List<Map<String, Object>> rawCountryData = countryClient.getCountryInfo(countryName);
+        List<Map<String, Object>> rawCountryData;
+
+        // 1. Chiamata sicura al Feign Client per recuperare il paese
+        try {
+            rawCountryData = countryClient.getCountryInfo(countryName);
+        } catch (FeignException.NotFound e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Paese non trovato nell'API esterna: " + countryName);
+        } catch (FeignException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore di comunicazione con il servizio paesi REST Countries");
+        } catch (Exception e) {
+            // Intercetta eventuali fallimenti di deserializzazione Jackson se l'API risponde con un Oggetto JSON anziché Array
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossibile recuperare i dati per il paese: " + countryName);
+        }
+
         if (rawCountryData == null || rawCountryData.isEmpty()) {
-            throw new RuntimeException("Paese non trovato: " + countryName);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nessun dato trovato per: " + countryName);
         }
 
         CountryDTO countryDTO = mapToCountryDTO(rawCountryData.get(0));
 
-        // Estrazione coordinate in modo sicuro (evita ClassCastException)
+        // 2. Estrazione coordinate con controlli di sicurezza su null
         if (countryDTO.getCapitalInfo() == null || countryDTO.getCapitalInfo().get("latlng") == null) {
-            throw new RuntimeException("Coordinate non disponibili per: " + countryDTO.getCapital());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Coordinate geografiche non disponibili per la capitale di: " + countryDTO.getName());
         }
 
         List<?> rawLatlng = (List<?>) countryDTO.getCapitalInfo().get("latlng");
         if (rawLatlng.size() < 2) {
-            throw new RuntimeException("Coordinate non valide per: " + countryDTO.getCapital());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Coordinate incomplete per: " + countryDTO.getName());
         }
 
         double lat = ((Number) rawLatlng.get(0)).doubleValue();
         double lon = ((Number) rawLatlng.get(1)).doubleValue();
 
-        // Chiamata meteo
-        Map<String, Object> weatherData = weatherClient.getCurrentWeather(lat, lon, true);
+        // 3. Chiamata meteo sicura
+        Map<String, Object> weatherData;
+        try {
+            weatherData = weatherClient.getCurrentWeather(lat, lon, true);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore durante il recupero dei dati meteo da OpenMeteo");
+        }
+
         if (weatherData == null || !weatherData.containsKey("current_weather")) {
-            throw new RuntimeException("Dati meteo non disponibili per: " + countryDTO.getCapital());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Dati meteo attuali non disponibili per: " + countryDTO.getName());
         }
 
         Map<String, Object> current = (Map<String, Object>) weatherData.get("current_weather");
@@ -63,7 +85,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         int weatherCode = ((Number) current.get("weathercode")).intValue();
         ZonedDateTime retrievedAt = ZonedDateTime.parse(current.get("time") + "Z");
 
-        // Recupero o creazione entity
+        // 4. Recupero o creazione entity
         Optional<CountryWeather> existing = repository.findByCountryIgnoreCase(countryDTO.getName());
         CountryWeather entity;
         if (existing.isPresent()) {
@@ -78,7 +100,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
         repository.save(entity);
 
-        // Composizione DTO di ritorno
+        // 5. Composizione DTO di ritorno
         WeatherDTO weatherDTO = new WeatherDTO(temperature, weatherCode, retrievedAt);
 
         CountryWeatherDTO dto = new CountryWeatherDTO();
@@ -95,7 +117,8 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
     public CountryWeatherDTO updateCountryData(String countryName, CountryWeatherDTO updatedData) {
         Optional<CountryWeather> existingOpt = repository.findByCountryIgnoreCase(countryName);
         if (existingOpt.isEmpty()) {
-            throw new RuntimeException("Paese non trovato: " + countryName);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, 
+                "Impossibile aggiornare: il paese '" + countryName + "' non è presente nel database. Esegui prima la GET /country-weather/" + countryName);
         }
         CountryWeather entity = existingOpt.get();
 
@@ -111,7 +134,6 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         return buildDTOFromEntity(entity);
     }
 
-    // Metodo privato riutilizzabile anche per getAllCountriesWeather()
     private CountryWeatherDTO buildDTOFromEntity(CountryWeather entity) {
         CountryDTO countryDTO = new CountryDTO();
         countryDTO.setName(entity.getCountry());
@@ -144,12 +166,16 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
     private CountryDTO mapToCountryDTO(Map<String, Object> data) {
         CountryDTO dto = new CountryDTO();
-        if (data.containsKey("name")) {
-            Map<String, Object> nameMap = (Map<String, Object>) data.get("name");
+        if (data.containsKey("name") && data.get("name") instanceof Map) {
+            Map<?, ?> nameMap = (Map<?, ?>) data.get("name");
             dto.setName((String) nameMap.get("common"));
         }
-        dto.setCapital((List<String>) data.get("capital"));
-        dto.setPopulation(((Number) data.get("population")).longValue());
+        if (data.containsKey("capital") && data.get("capital") instanceof List) {
+            dto.setCapital((List<String>) data.get("capital"));
+        }
+        if (data.containsKey("population") && data.get("population") != null) {
+            dto.setPopulation(((Number) data.get("population")).longValue());
+        }
 
         Map<String, Object> rawCurrencies = (Map<String, Object>) data.get("currencies");
         if (rawCurrencies != null) {
@@ -158,7 +184,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
                             Map.Entry::getKey,
                             e -> {
                                 Map<String, Object> val = (Map<String, Object>) e.getValue();
-                                return val.get("name") != null ? val.get("name").toString() : "";
+                                return val != null && val.get("name") != null ? val.get("name").toString() : "";
                             }));
             dto.setCurrencies(currencies);
         }
