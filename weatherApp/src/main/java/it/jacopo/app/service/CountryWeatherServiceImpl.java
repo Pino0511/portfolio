@@ -37,16 +37,13 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
     public CountryWeatherDTO getCountryWeather(String countryName) {
         List<Map<String, Object>> rawCountryData;
 
-        // 1. Chiamata sicura al Feign Client per recuperare il paese
+        // 1. Chiamata sicura al Feign Client per il paese
         try {
             rawCountryData = countryClient.getCountryInfo(countryName);
         } catch (FeignException.NotFound e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Paese non trovato nell'API esterna: " + countryName);
-        } catch (FeignException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore di comunicazione con il servizio paesi REST Countries");
         } catch (Exception e) {
-            // Intercetta eventuali fallimenti di deserializzazione Jackson se l'API risponde con un Oggetto JSON anziché Array
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossibile recuperare i dati per il paese: " + countryName);
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore di comunicazione con il servizio paesi REST Countries");
         }
 
         if (rawCountryData == null || rawCountryData.isEmpty()) {
@@ -55,9 +52,9 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
         CountryDTO countryDTO = mapToCountryDTO(rawCountryData.get(0));
 
-        // 2. Estrazione coordinate con controlli di sicurezza su null
+        // 2. Estrazione coordinate
         if (countryDTO.getCapitalInfo() == null || countryDTO.getCapitalInfo().get("latlng") == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Coordinate geografiche non disponibili per la capitale di: " + countryDTO.getName());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Coordinate non disponibili per: " + countryDTO.getName());
         }
 
         List<?> rawLatlng = (List<?>) countryDTO.getCapitalInfo().get("latlng");
@@ -73,11 +70,11 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         try {
             weatherData = weatherClient.getCurrentWeather(lat, lon, true);
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore durante il recupero dei dati meteo da OpenMeteo");
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Errore durante il recupero dei dati meteo");
         }
 
         if (weatherData == null || !weatherData.containsKey("current_weather")) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Dati meteo attuali non disponibili per: " + countryDTO.getName());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Dati meteo non disponibili per: " + countryDTO.getName());
         }
 
         Map<String, Object> current = (Map<String, Object>) weatherData.get("current_weather");
@@ -85,7 +82,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         int weatherCode = ((Number) current.get("weathercode")).intValue();
         ZonedDateTime retrievedAt = ZonedDateTime.parse(current.get("time") + "Z");
 
-        // 4. Recupero o creazione entity
+        // 4. Salvataggio / aggiornamento a DB
         Optional<CountryWeather> existing = repository.findByCountryIgnoreCase(countryDTO.getName());
         CountryWeather entity;
         if (existing.isPresent()) {
@@ -100,7 +97,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
 
         repository.save(entity);
 
-        // 5. Composizione DTO di ritorno
+        // 5. Costruzione output DTO
         WeatherDTO weatherDTO = new WeatherDTO(temperature, weatherCode, retrievedAt);
 
         CountryWeatherDTO dto = new CountryWeatherDTO();
@@ -118,7 +115,7 @@ public class CountryWeatherServiceImpl implements ICountryWeatherService {
         Optional<CountryWeather> existingOpt = repository.findByCountryIgnoreCase(countryName);
         if (existingOpt.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, 
-                "Impossibile aggiornare: il paese '" + countryName + "' non è presente nel database. Esegui prima la GET /country-weather/" + countryName);
+                "Impossibile aggiornare: il paese '" + countryName + "' non è a DB. Esegui prima la GET /country-weather/" + countryName);
         }
         CountryWeather entity = existingOpt.get();
 
