@@ -1,35 +1,36 @@
-# ☀️ Weather Dashboard
+# 🌍 Country Weather Service
 
-A Spring Boot REST API application for retrieving and managing weather data using the OpenMeteo API with SQLite persistence.
-
-## 📋 Overview
-
-Weather Dashboard is a Spring Boot application that fetches real-time weather data from OpenMeteo API and stores it in a local SQLite database. Built with clean architecture principles and OpenFeign for external API communication.
-
-**Key Features:**
-
-- 🌤️ Real-time weather data retrieval from OpenMeteo API
-- 📍 Location-based weather queries
-- 💾 SQLite database for data persistence
-- 📊 RESTful API with OpenAPI/Swagger documentation
-- 🐳 Docker containerization support
-- 🔄 Automatic DTO mapping with ModelMapper
+REST API Spring Boot che integra due servizi esterni (**REST Countries API** e **OpenMeteo API**) tramite **Spring Cloud OpenFeign** per recuperare, aggregare e memorizzare informazioni geografiche e dati meteo in tempo reale.
 
 ---
 
-## Screenshots
+## 📋 Overview
 
-![Screenshot 1](Screenshot.png)
+Il servizio accetta il nome di un paese, ne recupera i dettagli geografici (capitale, popolazione, valuta, bandiera), estrae le coordinate geografiche della capitale e le utilizza per interrogare il servizio meteo. I dati aggregati vengono persistiti a DB tramite Spring Data JPA per consentire aggiornamenti successivi (stato di visita, note personali e rating).
+
+## 🌟 Key Features
+
+- 🌍 **Country Data Retrieval**: Estrazione dati geografici e demografici da REST Countries API.
+- 🌤️ **Real-time Weather**: Query meteo in base alle coordinate della capitale tramite OpenMeteo API.
+- 🔄 **OpenFeign Integration**: Client HTTP dichiarativi per la comunicazione tra microservizi/API esterne.
+- 💾 **Data Persistence**: Salvataggio ed elaborazione dei dati aggregati tramite Spring Data JPA.
+- 📊 **Swagger / OpenAPI 3**: Interfaccia interattiva per il testing e la documentazione degli endpoint REST.
+
+---
+
+## 📸 Demo & Screenshots
+
+![Swagger API Demo](Screenshot.png)
 
 ---
 
 ## 🛠️ Tech Stack
 
-![Spring Boot](https://img.shields.io/badge/-Spring_Boot_3.5.3-6DB33F?style=flat&logo=spring-boot&logoColor=white)
-![Java 21](https://img.shields.io/badge/-Java_21-007396?style=flat&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/-Spring_Boot_3-6DB33F?style=flat&logo=spring-boot&logoColor=white)
+![Java 17+](https://img.shields.io/badge/-Java_17+-007396?style=flat&logo=java&logoColor=white)
 ![Spring Data JPA](https://img.shields.io/badge/-Spring_Data_JPA-6DB33F?style=flat&logo=spring&logoColor=white)
-![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
 ![OpenFeign](https://img.shields.io/badge/-OpenFeign-6DB33F?style=flat&logo=spring&logoColor=white)
+![Swagger/OpenAPI](https://img.shields.io/badge/-Swagger-85EA2D?style=flat&logo=swagger&logoColor=black)
 ![Maven](https://img.shields.io/badge/-Maven-C71A36?style=flat&logo=apache-maven&logoColor=white)
 
 ---
@@ -38,106 +39,57 @@ Weather Dashboard is a Spring Boot application that fetches real-time weather da
 
 ### Prerequisites
 
-- Java 21 or higher
-- Maven 3.6+
-- Git
+- **Java 17** o superiore
+- **Maven 3.6+**
+- **Git**
 
-### Installation
+### Configuration
 
-1. Clone the repository:
+Verifica la configurazione del database nel file `src/main/resources/application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/weather_db
+spring.datasource.username=tuo_utente
+spring.datasource.password=tua_password
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### Installation & Run
+
+Clona il repository:
 
 ```bash
 git clone <repository-url>
 cd weatherApp
 ```
 
-2. Build the project:
+Compila ed esegui l'applicazione:
 
-```bash
-mvn clean install
+Su Windows (Prompt dei Comandi):
+
+```dos
+mvnw spring-boot:run
 ```
 
-3. Run the application:
+Su Linux / macOS / PowerShell:
 
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
-The application will start on `http://localhost:8080`
+Accedi a Swagger UI:
 
-### Access Swagger UI
+Con l'applicazione avviata su `http://localhost:8080`:
 
-Once the application is running, access the API documentation at:
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
-- API Docs: `http://localhost:8080/v3/api-docs`
+- API Docs JSON: `http://localhost:8080/v3/api-docs`
 
 ---
 
-## ❓ Troubleshooting
+## 🔗 REST Endpoints
 
-### Application fails to start / Port 8080 already in use
-- Check if another application is using port 8080: `netstat -ano | findstr :8080` (Windows) or `lsof -i :8080` (Mac/Linux)
-- Kill the process using the port or change the port in `application.properties`: `server.port=8081`
-- Restart the application with the new port
-
-### Maven build failures
-- Clear Maven cache: `mvn clean`
-- Delete `target/` directory and rebuild: `rm -rf target && mvn clean install`
-- Check Java version matches requirement: `java -version` (should be Java 21+)
-- Update Maven: `mvn -v` and upgrade if necessary
-- Check pom.xml for dependency conflicts
-
-### SQLite database connection errors
-- Verify SQLite is properly configured in `application.properties`
-- Check database file path and permissions: database should be in the project root
-- Clear old database file and let the application create a new one on startup
-- Enable SQL debugging: add `logging.level.org.hibernate.SQL=DEBUG` to `application.properties`
-
-### OpenFeign API calls failing / External API unreachable
-- Verify OpenMeteo API is accessible: `curl https://api.open-meteo.com/v1/forecast`
-- Check internet connection and firewall rules
-- Verify API endpoints in the Feign client configuration
-- Enable debug logging: `logging.level.org.springframework.cloud.openfeign=DEBUG`
-- Check if the OpenMeteo API has rate limiting (may require backoff strategy)
-
-### Swagger UI not loading at /swagger-ui.html
-- Verify Spring Boot and Springdoc OpenAPI dependencies are in pom.xml
-- Clear browser cache: `Ctrl+F5` or open in incognito/private mode
-- Check application logs for initialization errors
-- Ensure the application started successfully on correct port
-- Try accessing via `/v3/api-docs` to test API documentation endpoint
-
-### 404 errors on REST endpoints
-- Verify controller mappings are correct with `@RestController` and `@RequestMapping`
-- Check if the endpoint path matches the request URL
-- Enable debug logging: `logging.level.org.springframework.web=DEBUG`
-- Verify no global error handler is returning 404 for valid endpoints
-- Check application startup logs for any mapping issues
-
-### Database migrations or schema issues
-- Verify Hibernate is configured correctly for SQLite
-- Check `spring.jpa.hibernate.ddl-auto` setting (usually `create-drop` for development)
-- Manual schema creation: remove current database file and restart application
-- Check entity annotations: `@Entity`, `@Table`, and column definitions
-- Review Hibernate logs for schema generation errors
-
-### Memory issues or high CPU usage
-- Increase heap size: `mvn spring-boot:run -Dspring-boot.run.arguments="--Xmx512m"`
-- Profile the application to identify memory leaks
-- Check for inefficient database queries or N+1 problems
-- Implement query result pagination for large datasets
-- Monitor thread count and database connection pool
-
-### Docker container startup issues
-- Build Docker image: `docker build -t weather-app .`
-- Run container with port mapping: `docker run -p 8080:8080 weather-app`
-- Check container logs: `docker logs <container_id>`
-- Verify Dockerfile exposes correct port (8080)
-- Ensure Docker has sufficient resources allocated
-
-### Configuration property not being recognized
-- Check property name spelling in `application.properties` or `application.yml`
-- Verify custom properties use correct prefix (e.g., `app.weather.api-key`)
-- Create `@ConfigurationProperties` class for type-safe access
-- Enable configuration processor in pom.xml for IDE autocomplete support
-- Restart IDE and rebuild project after configuration changes
+| Metodo | Endpoint | Descrizione |
+|---|---|---|
+| GET | `/country-weather/{country}` | Recupera dati geografici e meteo del paese, persistendo il risultato a DB. |
+| PUT | `/country-weather/{country}` | Aggiorna lo stato di visita (`visited`), le note e il rating del paese specificato. |
+| GET | `/country-weather/all` | Restituisce la lista completa dei paesi e meteo salvati nel database. |
