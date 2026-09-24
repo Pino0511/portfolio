@@ -1,88 +1,95 @@
-- Flip and navigate flashcards in a modern, responsive UI
-- Multilingual flashcard creation
-- Error handling for user input and API responses
-- REST API backend (Flask), React user interface
-- Sample multilingual cards and easy customization
+# 🎴 AI Flashcard Generator
 
-## Screenshots
+> **Intelligent AI-guided study flashcard generation.**
 
-![Screenshot 1](./screenREADME/screenshot1.png)![Screenshot 2](flashcard-![Screenshot 2](./screenREADME/screenshot2.png)
-![Screenshot 3](./screenREADME/screenshot3.png)
-![Screenshot 4](./screenREADME/screenshot4.png)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
 
-## Getting Started
+---
+
+## 📌 Overview
+
+**AI Flashcard Generator** is a full-stack web application that leverages language models (OpenAI / Gemini API) to transform complex topics or texts into study-ready educational flashcard decks.
+
+The application combines a lightweight REST API backend in **Flask** for prompt orchestration and JSON structuring with a reactive user interface in **React** featuring animations and interactive study experiences.
+
+---
+
+## ✨ Key Features
+
+* **⚡ Automatic AI Generation:** Instant creation of questions and answers from any topic or text provided by the user.
+* **🌐 Multilingual Support:** Ability to generate and study card decks in multiple languages.
+* **🔄 Interactive Study Interface:** Smooth navigation and "flip" animation (front/back) for an immersive review experience.
+* **🛡️ Robust Validation & Handling:** Management of user input errors, missing API keys, and provider rate limits.
+
+---
+
+## 📸 Screenshots
+
+|  | |
+| :---: | :---: |
+| ![Screenshot 1](./screenREADME/screenshot1.png) | ![Screenshot 2](./screenREADME/screenshot2.png) |
+
+| | |
+| :---: | :---: |
+| ![Screenshot 3](./screenREADME/screenshot3.png) | ![Screenshot 4](./screenREADME/screenshot4.png) |
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React, JavaScript (ES6+), CSS3
+* **Backend:** Python 3.9+, Flask, Flask-CORS
+* **LLM Integrations:** OpenAI API / Google Gemini API
+* **Configuration:** `python-dotenv`
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) >= 16
-- [Python](https://www.python.org/) >= 3.9
-- [pip](https://pip.pypa.io/en/stable/) (Recommend creating a virtual environment)
+* **Node.js** >= 16
+* **Python** >= 3.9
 
-### Installation
+---
 
-1. Clone the repository:
-```
-git clone <repository-url>
-cd flashcard-ai
-```
+### 1. Backend Setup (Flask)
 
-2. Install backend dependencies:
-```
+```bash
 cd backend
+
+# Create and activate the virtual environment
 python -m venv venv
+
+# Linux/macOS:
 source venv/bin/activate
+# Windows:
+# venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
+
+# Create a .env file inside the backend/ folder:
+OPENAI_API_KEY=your_openai_key
+GEMINI_API_KEY=your_gemini_key
+PORT=5000
+
+# Start the API server:
 python app.py
 ```
 
-3. Install frontend dependencies:
+### 2. Frontend Setup (React)
+In a new terminal window:
 ```
-cd ../frontend/flashcard-frontend
+bash
+cd frontend/flashcard-frontend
+
+# Install dependencies
 npm install
+
+# Start the application
 npm start
 ```
-
-4. Access via `http://localhost:3000` in your browser.
-
-## Project Structure
-
-- `backend/` — Flask API for flashcard generation
-- `frontend/flashcard-frontend/` — React UI for displaying and creating cards
-
-## API
-
-This app uses OpenAI & Gemini APIs for automatic flashcard generation. Create a `.env` file in the `backend/` folder and add your API keys:
-
-## ❓ Troubleshooting
-
-### Backend doesn't start
-- Ensure Python 3.9+ is installed: `python --version`
-- Verify virtual environment is activated: `source venv/bin/activate` (Linux/Mac) or `venv\Scripts\activate` (Windows)
-- Check all dependencies are installed: `pip install -r requirements.txt`
-- Verify port 5000 is not in use
-- Check that `.env` file exists in `backend/` folder with API keys
-
-### Frontend doesn't start
-- Ensure Node.js 16+ is installed: `node --version`
-- Try clearing npm cache: `npm cache clean --force`
-- Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
-- Check that port 3000 is not in use
-
-### API errors when generating flashcards
-- Verify API keys are correctly set in `.env` file
-- Check API key has valid permissions in OpenAI/Gemini dashboard
-- Verify internet connection
-- Check API rate limits haven't been exceeded
-- Restart both backend and frontend after adding/changing API keys
-
-### CORS errors
-- Ensure Flask-CORS is installed: `pip install flask-cors`
-- Verify backend is running on `http://localhost:5000`
-- Clear browser cache and cookies
-- Try opening in incognito/private window
-
-### Button click not working
-- Check browser console for JavaScript errors (F12)
-- Verify both frontend and backend are running
-- Try hard refresh: `Ctrl+Shift+R` (Cmd+Shift+R on Mac)
-- Check that all dependencies are properly installed
