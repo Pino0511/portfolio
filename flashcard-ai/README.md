@@ -83,8 +83,7 @@ python app.py
 
 ### 2. Frontend Setup (React)
 In a new terminal window:
-```
-bash
+```bash
 cd frontend/flashcard-frontend
 
 # Install dependencies
